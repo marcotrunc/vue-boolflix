@@ -16,7 +16,7 @@ export default {
   },
   computed: {
     numFas() {
-      return Math.ceil(this.vote) / 2;
+      return Math.ceil(this.vote / 2);
     },
     numFar() {
       return this.max - this.numFas;
