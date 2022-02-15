@@ -10,7 +10,6 @@ export default {
   props: ["finalUrl"],
   computed: {
     posterSrc() {
-      console.log("ciao");
       return `https://image.tmdb.org/t/p/w342${this.finalUrl}`;
     },
   },
