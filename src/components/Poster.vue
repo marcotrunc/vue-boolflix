@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <img :src="posterSrc" alt="" />
+  <div class="w-100">
+    <img :src="posterSrc" alt="" class="img-fluid-100" />
   </div>
 </template>
 
@@ -17,4 +17,8 @@ export default {
 </script>
 
 <style lamg="scss" scoped>
+img.img-fluid-100 {
+  width: 100%;
+  object-fit: cover;
+}
 </style>

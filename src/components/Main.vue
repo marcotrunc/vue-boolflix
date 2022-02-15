@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <Cards :type="movies" typeTitle="Film" />
     <Cards :type="series" typeTitle="Serie Tv" />
   </div>

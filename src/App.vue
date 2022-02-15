@@ -1,18 +1,27 @@
 <template>
   <div>
-    <Header @set-search="setSearch" />
-    <Main :search="inputText" />
+    <section class="container-fluid bg-dark">
+      <div class="container">
+        <header class="d-flex align-items-center justify-content-between">
+          <div><h1 class="text-danger text-uppercase">BoolFlix</h1></div>
+          <Search @set-search="setSearch" />
+        </header>
+      </div>
+    </section>
+    <section class="container-fluid bg-dark">
+      <Main :search="inputText" v-show="inputText" />
+    </section>
   </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
+import Search from "./components/Search.vue";
 import Main from "./components/Main.vue";
 
 export default {
   name: "App",
   components: {
-    Header,
+    Search,
     Main,
   },
   data() {

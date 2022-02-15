@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <img :src="changeFlag(language)" :alt="language" />
+  <div class="w-100 d-flex justify-content-center">
+    <img :src="changeFlag(language)" :alt="language" class="img-fluid-flag" />
   </div>
 </template>
 
@@ -42,4 +42,7 @@ export default {
 </script>
 
 <style lang="scss" scoped >
+.img-fluid-flag {
+  width: 20%;
+}
 </style>
