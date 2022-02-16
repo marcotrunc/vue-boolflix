@@ -8,9 +8,8 @@
         <div class="flag-container">
           <Flag :language="product.original_language" />
         </div>
-        <div>
-          <Grade :vote="product.vote_average" />
-        </div>
+        <Grade :vote="product.vote_average" />
+        <Cast :id="product.id" />
       </div>
     </div>
   </section>
@@ -20,6 +19,7 @@
 import Flag from "./Flag.vue";
 import Poster from "./Poster.vue";
 import Grade from "./Grade.vue";
+import Cast from "./Cast.vue";
 export default {
   name: "Card",
   props: ["product", "title", "original_title"],
@@ -27,6 +27,7 @@ export default {
     Flag,
     Poster,
     Grade,
+    Cast,
   },
 };
 </script>
@@ -56,7 +57,8 @@ export default {
 
 .card:hover .description {
   animation-name: example;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes example {
@@ -64,7 +66,7 @@ export default {
     opacity: 0;
   }
   to {
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 </style>
