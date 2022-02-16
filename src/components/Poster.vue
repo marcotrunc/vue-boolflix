@@ -1,7 +1,5 @@
 <template>
-  <div class="w-100">
-    <img :src="posterSrc" alt="" class="img-fluid-100" />
-  </div>
+  <img :src="posterSrc" alt="" class="img-fluid-100" />
 </template>
 
 <script>
@@ -10,7 +8,9 @@ export default {
   props: ["finalUrl"],
   computed: {
     posterSrc() {
-      return `https://image.tmdb.org/t/p/w342${this.finalUrl}`;
+      if (this.finalUrl)
+        return `https://image.tmdb.org/t/p/w342${this.finalUrl}`;
+      return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSj56xaQokG9XLjbZY1tYpyNrWkrHXdkRfx2gZ9AVTgrMvH20aOJdLeMNtj6GhvRBnQKw&usqp=CAU";
     },
   },
 };

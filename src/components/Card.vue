@@ -1,8 +1,8 @@
 <template>
-  <section class="">
+  <section>
     <div class="card">
-      <Poster :finalUrl="product.poster_path" class="card-img-top poster" />
-      <div class="description">
+      <Poster :finalUrl="product.poster_path" class="card-img-top h-100" />
+      <div class="description py-4">
         <h3 class="fs-4">{{ product.title || product.name }}</h3>
         <div>{{ product.original_title || product.original_name }}</div>
         <div class="flag-container">
@@ -34,6 +34,7 @@ export default {
 <style lang="scss" scoped>
 .card {
   overflow: hidden;
+  height: 500px;
   .description {
     text-align: center;
     position: absolute;
@@ -52,13 +53,12 @@ export default {
     }
   }
 }
-.poster {
-  object-fit: cover;
-}
+
 .card:hover .description {
   animation-name: example;
   animation-duration: 2s;
 }
+
 @keyframes example {
   from {
     opacity: 0;

@@ -1,7 +1,11 @@
 <template>
   <div>
-    <i v-for="n in numFas" :key="'A' + n" class="fas fa-star"></i>
-    <i v-for="a in numFar" :key="'B' + a" class="far fa-star"></i>
+    <i
+      v-for="n in voteMax"
+      :key="'A' + n"
+      class="fa-star"
+      :class="n <= voteFin ? 'fas' : 'far'"
+    ></i>
   </div>
 </template>
 
@@ -11,15 +15,12 @@ export default {
   props: ["vote"],
   data() {
     return {
-      max: 5,
+      voteMax: 5,
     };
   },
   computed: {
-    numFas() {
+    voteFin() {
       return Math.ceil(this.vote / 2);
-    },
-    numFar() {
-      return this.max - this.numFas;
     },
   },
 };

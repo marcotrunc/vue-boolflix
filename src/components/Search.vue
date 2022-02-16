@@ -2,7 +2,7 @@
   <div>
     <input
       type="text"
-      placeholder=""
+      :placeholder="placeholder"
       v-model.trim="inputText"
       @keyup.enter="passInputText"
     />
@@ -12,6 +12,7 @@
 <script>
 export default {
   name: "Search",
+  props: ["placeholder"],
   data() {
     return {
       inputText: "",

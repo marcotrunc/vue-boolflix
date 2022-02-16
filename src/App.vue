@@ -1,15 +1,17 @@
 <template>
-  <div>
-    <section class="container-fluid bg-dark">
+  <div class="bg-dark">
+    <section>
       <div class="container">
         <header class="d-flex align-items-center justify-content-between">
           <div><h1 class="text-danger text-uppercase">BoolFlix</h1></div>
-          <Search @set-search="setSearch" />
+          <Search @set-search="setSearch" placeholder="Cerca qui..." />
         </header>
       </div>
     </section>
-    <section class="container-fluid bg-dark">
-      <Main :search="inputText" v-show="inputText" />
+    <section>
+      <div>
+        <Main :search="inputText" />
+      </div>
     </section>
   </div>
 </template>

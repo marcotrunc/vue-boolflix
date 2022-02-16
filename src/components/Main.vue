@@ -1,10 +1,14 @@
 <template>
-  <div>
-    <Cards :type="movies" typeTitle="Film" />
-    <Cards :type="series" typeTitle="Serie Tv" />
-  </div>
+  <section class="container-fluid">
+    <div class="bg-dark" v-if="movies.length > 0 || series.length > 0">
+      <Cards :items="movies" typeTitle="Film" />
+      <Cards :items="series" typeTitle="Serie Tv" />
+    </div>
+    <div id="message-container" v-else>
+      <h2>Ricerca un nuovo titolo</h2>
+    </div>
+  </section>
 </template>
-
 <script>
 import axios from "axios";
 import Cards from "./Cards.vue";
@@ -46,6 +50,7 @@ export default {
       this.fetchProduct(baseUri, "search/tv", config, "series");
     },
   },
+
   watch: {
     search: function () {
       if (!this.search) {
@@ -60,4 +65,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#message-container h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  color: #000;
+}
 </style>
